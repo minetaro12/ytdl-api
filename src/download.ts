@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
     const videoFile = `tmp/${filename}.mp4`;
     const audioFile = `tmp/${filename}.m4a`;
     const outFile = `tmp/${filename}_out.mp4`;
+    console.log(`Start ${videoID}`);
     (async () => {
       try {
         const title = (await ytdl.getInfo(videoID)).videoDetails.title; //タイトルを取得
