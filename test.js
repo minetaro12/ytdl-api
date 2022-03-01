@@ -1,0 +1,1 @@
+javascript:url='example.com';window.open(`https://${url}/download?url=${location.search.substring(3,14)}`);
