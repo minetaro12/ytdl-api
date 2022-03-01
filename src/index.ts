@@ -15,6 +15,9 @@ app.use(express.urlencoded({extended: true}));
 import downlaodProcess from './download';
 app.use('/download', downlaodProcess);
 
+import mp3Process from './mp3';
+app.use('/mp3', mp3Process);
+
 app.listen(port, () => {
   console.log(`Server listen on port ${port}`);
 });
