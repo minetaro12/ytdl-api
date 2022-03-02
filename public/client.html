@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" http-equiv="content-type" charset="utf-8">
+    <title>ようつべDL</title>
+  </head>
+  <body>
+    <h1>ようつべDL</h1>
+    <form action="/download" method="get"">
+    <p>動画ID or URL:<input type="text" name="url" placeholder="https://www.youtube.com/watch?v=O_WkEnScdGo" required></p>
+    <p><input type="checkbox" name="avc" id="avcoption" value="1" ><label for="avcoption">動画でAVC形式を強制する</label></p>
+    <p><input type="checkbox" name="aac" id="aacoption" value="1"><label for="aacoption">音声でAAC形式を強制する</label></p>
+    <p><input type="submit" value="おとす"></p>
+    </form>
+    <hr>
+    <footer>&copy;2022 minetaro12 <a href="https://github.com/minetaro12/ytdl-api" target="_blank">src</a></footer>
+  </body>
+</html>

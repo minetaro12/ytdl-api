@@ -12,6 +12,9 @@ try {
 
 app.use(express.urlencoded({extended: true}));
 
+import htmlClient from './client';
+app.use('/', htmlClient);
+
 import downlaodProcess from './download';
 app.use('/download', downlaodProcess);
 
