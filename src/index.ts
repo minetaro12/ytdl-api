@@ -11,6 +11,7 @@ try {
 };
 
 app.use(express.urlencoded({extended: true}));
+app.use(express.static('public'));
 
 import htmlClient from './client';
 app.use('/', htmlClient);
