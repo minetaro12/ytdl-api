@@ -85,7 +85,7 @@ const submit = function() {
       return res.blob();
     })
     .then((data) => {
-      statusText.innerHTML = '<p>Complete</p>';
+      statusText.innerHTML = '<p>Complete!</p>';
       const a = document.createElement("a");
       a.href = window.URL.createObjectURL(data);
       a.download = fileName;
