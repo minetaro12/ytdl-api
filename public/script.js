@@ -55,6 +55,10 @@ const submit = function() {
     statusText.innerHTML = '<p>Please Wait...<img src="https://www.benricho.org/loading_images/img-transparent/712-24.gif"></p>';
     fetch(`/mp3?url=${videoId}`)
     .then((res) => {
+      if (!res.ok) {
+        statusText.innerHTML = '<p>Error</p>';
+        return;
+      };
       statusText.innerHTML = '<p>Downloading...<img src="https://www.benricho.org/loading_images/img-transparent/712-24.gif"></p>';
       const header = res.headers.get('Content-Disposition');
       const parts = header.split(';');
@@ -69,6 +73,10 @@ const submit = function() {
       a.download = fileName;
       a.click();
       a.remove();
+    })
+    .catch((error) => {
+      statusText.innerHTML = '<p>Error</p>';
+      return;
     });
     return;
   };
@@ -77,6 +85,10 @@ const submit = function() {
     statusText.innerHTML = '<p>Please Wait...<img src="https://www.benricho.org/loading_images/img-transparent/712-24.gif"></p>';
     fetch(`/download?url=${videoId}${avcQuery}${aacQuery}`)
     .then((res) => {
+      if (!res.ok) {
+        statusText.innerHTML = '<p>Error</p>';
+        return;
+      };
       statusText.innerHTML = '<p>Downloading...<img src="https://www.benricho.org/loading_images/img-transparent/712-24.gif"></p>';
       const header = res.headers.get('Content-Disposition');
       const parts = header.split(';');
@@ -91,6 +103,10 @@ const submit = function() {
       a.download = fileName;
       a.click();
       a.remove();
+    })
+    .catch((error) => {
+      statusText.innerHTML = '<p>Error</p>';
+      return;
     });
     return;
   };
