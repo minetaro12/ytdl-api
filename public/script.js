@@ -56,8 +56,7 @@ const submit = function() {
     fetch(`/mp3?url=${videoId}`)
     .then((res) => {
       if (!res.ok) {
-        statusText.innerHTML = '<p>Error</p>';
-        return;
+        throw new Error;
       };
       statusText.innerHTML = '<p>Downloading...<img src="https://www.benricho.org/loading_images/img-transparent/712-24.gif"></p>';
       const header = res.headers.get('Content-Disposition');
@@ -78,7 +77,6 @@ const submit = function() {
       statusText.innerHTML = '<p>Error</p>';
       return;
     });
-    return;
   };
 
   if(mp3Mode == false) {
@@ -86,8 +84,7 @@ const submit = function() {
     fetch(`/download?url=${videoId}${avcQuery}${aacQuery}`)
     .then((res) => {
       if (!res.ok) {
-        statusText.innerHTML = '<p>Error</p>';
-        return;
+        throw new Error;
       };
       statusText.innerHTML = '<p>Downloading...<img src="https://www.benricho.org/loading_images/img-transparent/712-24.gif"></p>';
       const header = res.headers.get('Content-Disposition');
@@ -108,6 +105,5 @@ const submit = function() {
       statusText.innerHTML = '<p>Error</p>';
       return;
     });
-    return;
   };
 };
