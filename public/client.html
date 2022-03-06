@@ -26,10 +26,12 @@
             <input type="checkbox" class="form-check-label" name="mp3" id="mp3Option" value="1" onclick="valueChange()">
             <label for="mp3Option">音声のみMP3形式でダウンロードする</label>
           </p>
-          <p>
+          <div id="submitButton">
             <input type="button" value="おとす" onclick="submit()" class="btn btn-outline-primary">
+          </div>
+          <p>
+            <div id="statusArea"></div>
           </p>
-          <div id="status"></div>
         </div>
       </div>
       <hr>
